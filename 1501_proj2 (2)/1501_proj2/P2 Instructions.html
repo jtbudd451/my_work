@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>P2 Instructions</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">CS/COE 1501 Project 2</h1>
+
+<h2 id="toc_1">Goal:</h2>
+
+<p>To understand the innerworkings and implementation of the LZW compression algorithm, and to gain a better understanding of the performance it offers.</p>
+
+<h2 id="toc_2">High-level description:</h2>
+
+<p>As we discussed in lecture, LZW is a compression algorithm that was created in 1984 by Abraham Lempel, Jacob Ziv, and Terry Welch.
+In its most basic form, it will output a compressed file as a series of fixed-length codewords.
+This is the approach implemented in the LZW code provided by the authors of the textbook.</p>
+
+<p>As we discussed in class, <em>variable-width</em> codewords can be used to increase the size of codewords output as the dictionary fills up.
+Further, once the dictionary fills up, the algorithm can either stop adding patterns and continue compression with only the patterns already discovered, or the algorithm can reset the codebook to find new patterns.
+The LZW code provided by the textbook authors simply continues to use patterns added to the codebook.</p>
+
+<p>For this project, you will be modifying the LZW source code provided by the authors of the text book to use variable-width codewords, and to optionally reset the codebook under certain conditions.
+With these changes in hand, you will then compare the performance of your modified LZW code with the provided LZW code, and further with the performance of a widely used compression application of your choice.</p>
+
+<h2 id="toc_3">Specifications:</h2>
+
+<ol>
+<li><p>Download copies of the 14 example files from <a href="http://people.cs.pitt.edu/%7Ebill/1501/lzw_examples/">here</a>.</p>
+
+<ul>
+<li>Do not upload these files to your Box folder!</li>
+</ul></li>
+<li><p>Look over the copy of <code>LZW.java</code> named <code>MyLZW.java</code> (note that this class is not in a package). You will be modifying this file for your assignment. Also note that <code>LZW.java</code> is the example LZW code provided by the textbook.</p></li>
+<li><p>Before making the required changes to <code>MyLZW.java</code>, you will need to read through the code, and run example compressions/expansions to understand how it is currently working. Note that <code>LZW.java</code> (and hence your <code>MyLZW.java</code>) requires the following library files (also developed by the textbook authors):  <code>BinaryStdIn.java</code>, <code>BinaryStdOut.java</code>, <code>TST.java</code>, <code>Queue.java</code>, <code>StdIn.java</code>, and <code>StdOut.java</code>. These files have already been added to your repository, within the package <code>edu.princeton.cs.algs4</code>.</p></li>
+<li><p>With a firm understanding of the provided code in hand, you can proceed to make the following changes to <code>MyLZW.java</code>:</p>
+
+<ul>
+<li><p>Make it so that the algorithm will vary the size of the output/input codewords from 9 to 16 bits.</p></li>
+<li><p>The codeword size should be increased when all of the codewords of a previous size have been used</p></li>
+<li><p>Modify the code to have three options when the codebook is filled up (i.e., when all 16-bit codewords have been used):</p>
+
+<ol>
+<li><p><strong>Do Nothing mode</strong> Do nothing and continue to use the full codebook (this is the mode implemented by <code>LZW.java</code>).</p></li>
+<li><p><strong>Reset mode</strong> Reset the dictionary back to its initial state so that new codewords can be added. Be careful to reset at the appropriate place for both compression and expansion, so that the algorithms remain in sync. This is very tricky and may require alot of planning in order to get it working correctly.</p></li>
+<li><p><strong>Monitor mode</strong> Initially do nothing (keep using the full codebook) but begin monitoring the <em>compression ratio</em> whenever you fill the codebook. Define the compression ratio to be the size of the uncompressed data that has been processed/generated so far divided by the size of the compressed data generated/processed so far (for compression/expansion, respectively). If the compression ratio degrades by more than a set threshold from the point when the last codeword was added, then reset the dictionary back to its initial state. To determine the threshold for resetting you will take a ratio of compression ratios [(old ratio)/(new ratio)], where old ratio is the ratio recorded when your program last filled the codebook, and new ratio is the current compression ratio. If the &quot;ratio of ratios&quot; exceeds 1.1, then you should reset.</p>
+
+<p>For example, if the compression ratio when you start monitoring is 2.5 and the compression ratio at some later point is 2.3, the ratio of ratios at that point would be 2.5/2.3 = 1.087, so you should not reset the dictionary. Continuing, if your compression ratio drops to 2.2, the ratio of ratios would become 2.5/2.2 or 1.136. This means that your ratio of ratios has exceeded the threshold of 1.1 and you should now reset the dictionary.  Be very careful to coordinate the code for both compression and expansion so that it works correctly.</p></li>
+</ol></li>
+<li><p>The mode to be used should be chosen by the program during compression. Whichever mode is used to compress a file should also be used to expand the file. However, you should not require the user to state the mode to use for expansion. The mode used to compress a file should be stored at the beginning of the output file, so that it can be automatically retrieved during expansion. To establish the mode to be used during compression, your program should accept 3 new command line arguments:</p>
+
+<ul>
+<li><code>n</code> for Do Nothing mode</li>
+<li><code>r</code> for Reset mode</li>
+<li><code>m</code> for Monitor mode</li>
+</ul></li>
+<li><p>Note that the provided LZW code already accepts a command line argument to determine whether compression or expansion should be performed (<code>-</code> and <code>+</code>, respectively), and that input/output files are provided via standard I/O redirection (<code>&lt;</code> to indicate an input file and <code>&gt;</code> to indicate an output file). Hence, your new arguments should be handled <em>in addition to</em> what is provided. For example, to compress the file <code>foo.txt</code> to generate <code>foo.lzw</code> using Reset mode, you should be able to run:</p>
+
+<div><pre><code class="language-none">java MyLZW - r &lt; foo.txt &gt; foo.lzw</code></pre></div>
+
+<p>Similarly, to expand <code>foo.lzw</code> into <code>foo2.txt</code>, you should run:</p>
+
+<div><pre><code class="language-none">java MyLZW + &lt; foo.lzw &gt; foo2.txt</code></pre></div>
+
+<p>Note that this example does not overwrite foo.txt. This is a good approach to take in testing your programs so that you can compare <code>foo.txt</code> and <code>foo2.txt</code> to ensure that they are the same file.</p></li>
+</ul></li>
+<li><p>Once all of the required changes have been made to <code>MyLZW.java</code>, you should evaluate its performance on the 14 provided example files:  <code>all.tar</code>, <code>assig2.doc</code>, <code>bmps.tar</code>, <code>code.txt</code>, <code>code2.txt</code>, <code>edit.exe</code>, <code>frosty.jpg</code>, <code>gone_fishin.bmp</code>, <code>large.txt</code>, <code>Lego-big.gif</code>, <code>medium.txt</code>, <code>texts.tar</code>, <code>wacky.bmp</code>, and <code>winnt256.bmp</code>. Specifically, for each of the provided example files, measure the original file size, compressed file size, and compression ratio (original file size / compressed file size) when compressed using the following techniques:</p>
+
+<ul>
+<li><p>The unmodified <code>LZW.java</code> program (i.e., 12 bit codewords)</p></li>
+<li><p>Your <code>MyLZW.java</code> (variable width codewords) using Do Nothing mode</p></li>
+<li><p>Your <code>MyLZW.java</code> (variable width codewords) using Reset mode</p></li>
+<li><p>Your <code>MyLZW.java</code> (variable width codewords) using Monitor mode</p></li>
+<li><p>Another existing compression application of your choice (e.g., 7zip, WinZIP, gzip, bzip2).
+You should organize your results of these compressions/expansions into a table in a text file named <code>results.txt</code> and submit it along with your code.</p></li>
+</ul></li>
+</ol>
+
+<h2 id="toc_4">Submission Guidelines:</h2>
+
+<ul>
+<li><strong>DO NOT</strong> upload the example files to your Box folder.</li>
+<li><strong>DO NOT</strong> uploda any IDE package files.</li>
+<li>You must name the primary driver for your program <code>MyLZW.java</code>, and it must be outside of any package.</li>
+<li>You must be able to compile your program by running <code>javac MyLZW.java</code>.</li>
+<li>You must be able to run your program as shown in the above examples.</li>
+<li>You must fill out <code>info_sheet.txt</code>.</li>
+<li>The project is due at 11:59 PM on Sunday, February 26. Upload your progress to Box frequently, even far in advance of this deadline. <strong>No late assignments will be accepted.</strong> At the deadline, your Box folder will automatically be changed to read-only, and no more changes will be accepted. Whatever is present in your Box folder at that time will be considered your submission for this assignment—no other submissions will be considered.</li>
+</ul>
+
+<h2 id="toc_5">Additional Notes and Hints:</h2>
+
+<ul>
+<li><p>In the authors&#39; code, the bits per codeword (<code>W</code>) and number of codewords (<code>L</code>) values are constants. In <code>MyLZW</code>, you will need them to be variables. As the bits per codeword value increases, so does the number of codewords value.</p></li>
+<li><p>The <code>TST</code> the author uses can grow dynamically, so it does not matter how large the dictionary will be. However, for the <code>expand()</code> method, an array of String (<code>String[]</code>) is used for the dictionary. Make sure this is large enough to accommodate the maximum possible number of codewords.</p></li>
+<li><p>Carefully trace what your code is doing as you modify it. You only have to write a few lines of code for this program, but it could still require a substantial amount of time to get to work properly. The trickiest parts occur when the bits per codeword values are increased and when the dictionary is reset. I recommend tracing these portions of code, either on paper or with output statements, to make sure your compression and expansion sections are treating them correctly. One idea is the have an extra output file for each of the <code>compress()</code> and <code>expand()</code> methods to output any trace code. Printing out (codeword, string) pairs in the iterations just before and after a bit change or reset is done can help you a lot to synchronize your code properly.</p></li>
+<li><p>Be especially careful with the dictionary reset and monitor compression ratio options. These are very tricky and take alot of thought to get to work. Think about what happens when the dictionary is reset and what is necessary to do in the <code>compress()</code> and <code>expand()</code> methods. I recommend getting the variable-width codeword part of the program to work first and then moving on to implementing Reset mode and Monitor mode.</p></li>
+<li><p>Start on this project early! Not only will the implementation be tricky, but you will need to finish the programming portion of your project with enough time left over to gather results of using your code to compress the example files.</p></li>
+<li><p>Note that <code>LZW.java</code> (and consequently your <code>MyLZW.java</code>) rely on redirecting standard in and standard out to the input and output files (respectively). An overview of I/O redirection can be found <a href="http://www.tldp.org/LDP/abs/html/io-redirection.html">here</a>, and <a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/redirection.mspx?mfr=true">here</a>. Note a consequence of this: any text printed to standard out (e.g., via <code>System.out.println()</code>) will be redirected to the output file instead of the terminal. Standard error, however, should still be displayed to the terminal, and hence, you can use <code>System.err.println()</code> to output debugging information. This I/O redirection may also complicate running <code>MyLZW</code> from some IDEs. If you are having trouble running <code>MyLZW</code> from your IDE, run your program from the command line.</p></li>
+<li><p>Consider the notes in <code>LZW.java</code> (and <code>TST.java</code>) concerning the speed of the <code>substring()</code> function. In order to run your experiments faster, you may want to edit <code>LZW.java</code> (<code>MyLZW.java</code>) and <code>TST.java</code> to remove all calls to <code>substring()</code>. There is no penalty for continuing to use <code>substring()</code> for this assignment, but you will experience noticeably slow performance.</p></li>
+</ul>
+
+<h2 id="toc_6">Grading Rubric:</h2>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Points</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Command line arguments are interpreted as specified</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Variable width keywords (9-16 bits) working properly</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Reset mode implemented and working properly</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Monitor mode implemented and working properly</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Experimental results</th>
+<th>Points</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Unmodified LZW.java</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Variable width codewords (<code>MyLZW.java</code>) with Do Nothing mode</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Variable width codewords (<code>MyLZW.java</code>) with Reset mode</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Variable width codewords (<code>MyLZW.java</code>) with Monitor mode</td>
+<td>4</td>
+</tr>
+<tr>
+<td>An appropriate popular compression application</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Other</th>
+<th>Points</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Assignment info sheet/submission</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</body>
+
+</html>

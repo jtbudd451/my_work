@@ -1,0 +1,78 @@
+========================================
+CS/COE 1501 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment.  Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name:  
+
+Lecture section:  
+
+Recitation day and time:  
+
+Assignment #:  
+
+Program due date:  
+
+Handed in date:  
+
+Source code file name(s):
+MyLZW.java
+
+****** FEATURES INCLUDED ********
+- Algorith varies in size of the output/input codewords from 9 to 16 bits
+- Codeword size increases when all of the codewords of a pervious size have been used
+
+- 3 Modes included to respond to when the codebook has filled up (i.e. when all 16-bit codewords have been used)
+	- Mode is chosen as a command line argument during compression with n r and m each representing the three modes.
+	- The user does not need to state which mode during expansion
+	
+
+1. Do Nothing Mode 	n_mode
+	- Does nothing and continue using the full codebook
+2. Reset Mode 		r_mode
+	- Reset the dictionary back to its initial state 
+	- so that a new code book can be added
+3. Monitor Mode 	m_mode
+	- Initially does nothing
+	- begin monitoring the compression ration whenever the codebook is filled
+		- Define the compression ratio to be the size of the uncompressed data that has been processed/generated so far divided by the size of the compressed data generated/processed so far (for compression/expansion, respectively).
+	- If the compression ratio degrades by more than a set threshold from the point when the last codeword was added, then reset the dictionary back to its initial state. 
+	- ratio of compression ratios [(old ratio)/(new ratio)], where old ratio is the ratio recorded when your program last filled the codebook, and new ratio is the current compression ratio
+
+
+- does not account for modes other than n r or m... any other input will result in do nothing mode
+- DONT UPLOAD 14 SAMPLE FILES
+-LZW from book 
+
+
+
+Other file name(s) (if relevant):
+
+MyLZW.java) requires the following library files (also developed by the textbook authors): BinaryStdIn.java, BinaryStdOut.java, TST.java, Queue.java, StdIn.java, and StdOut.java. These files have already been added to your repository, within the package edu.princeton.cs.algs4.
+
+
+
+
+
+Does your program run without error?:
+
+If not, what is/are the error(s) and which parts of your program run
+correctly?:
+
+
+
+
+
+
+
+Additional comments to the grader:
+
+
+
+
+
+
+
